@@ -1,4 +1,4 @@
-import { deployDefaultReserveInterestRateStrategy } from '@aave/deploy-v3/dist/helpers/contract-deployments';
+import { deployDefaultReserveInterestRateStrategy } from '@pollum-io/lending-deploy/dist/helpers/contract-deployments';
 import { expect } from 'chai';
 import { BigNumber, ethers, Event, utils } from 'ethers';
 import { MAX_UINT_AMOUNT } from '../helpers/constants';
@@ -10,10 +10,10 @@ import {
   getMockFlashLoanReceiver,
   getStableDebtToken,
   getVariableDebtToken,
-} from '@aave/deploy-v3/dist/helpers/contract-getters';
+} from '@pollum-io/lending-deploy/dist/helpers/contract-getters';
 import { TestEnv, makeSuite } from './helpers/make-suite';
 import './helpers/utils/wadraymath';
-import { waitForTx } from '@aave/deploy-v3';
+import { waitForTx } from '@pollum-io/lending-deploy';
 import { MockATokenRepayment__factory } from '../types';
 
 makeSuite('Pool: FlashLoan', (testEnv: TestEnv) => {

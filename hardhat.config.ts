@@ -9,12 +9,11 @@ require('dotenv').config();
 
 import '@nomicfoundation/hardhat-toolbox';
 import 'hardhat-deploy';
-import '@tenderly/hardhat-tenderly';
 import 'hardhat-contract-sizer';
 import 'hardhat-dependency-compiler';
 import '@nomicfoundation/hardhat-chai-matchers';
 
-import { DEFAULT_NAMED_ACCOUNTS } from '@aave/deploy-v3';
+import { DEFAULT_NAMED_ACCOUNTS } from '@pollum-io/lending-deploy';
 
 const DEFAULT_BLOCK_GAS_LIMIT = 12450000;
 const HARDFORK = 'london';
@@ -46,11 +45,6 @@ const hardhatConfig = {
   mocha: {
     timeout: 0,
     bail: true,
-  },
-  tenderly: {
-    project: process.env.TENDERLY_PROJECT || '',
-    username: process.env.TENDERLY_USERNAME || '',
-    forkNetwork: '1', //Network id of the network we want to fork
   },
   networks: {
     coverage: {
@@ -91,7 +85,7 @@ const hardhatConfig = {
     contracts: [
       {
         artifacts: './temp-artifacts',
-        deploy: 'node_modules/@aave/deploy-v3/dist/deploy',
+        deploy: 'node_modules/@pollum-io/lending-deploy/dist/deploy',
       },
     ],
   },

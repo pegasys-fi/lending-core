@@ -4,7 +4,7 @@ import {
   advanceTimeAndBlock,
   ZERO_ADDRESS,
   MintableERC20__factory,
-} from '@aave/deploy-v3';
+} from '@pollum-io/lending-deploy';
 import { expect } from 'chai';
 import { ethers } from 'hardhat';
 import { BigNumber } from 'ethers';

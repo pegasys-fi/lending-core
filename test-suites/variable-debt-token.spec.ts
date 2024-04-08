@@ -13,7 +13,7 @@ import {
   getVariableDebtToken,
   increaseTime,
   waitForTx,
-} from '@aave/deploy-v3';
+} from '@pollum-io/lending-deploy';
 import { VariableDebtToken__factory } from '../types';
 import './helpers/utils/wadraymath';
 import { getVariableDebtTokenEvent } from './helpers/utils/tokenization-events';

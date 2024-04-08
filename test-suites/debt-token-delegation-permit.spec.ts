@@ -1,4 +1,4 @@
-import { evmSnapshot, evmRevert } from '@aave/deploy-v3';
+import { evmSnapshot, evmRevert } from '@pollum-io/lending-deploy';
 import { expect } from 'chai';
 import { BigNumber, utils } from 'ethers';
 import { HARDHAT_CHAINID, MAX_UINT_AMOUNT, ZERO_ADDRESS } from '../helpers/constants';

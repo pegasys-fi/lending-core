@@ -10,8 +10,8 @@ import {
   getMockVariableDebtToken,
   getStableDebtToken,
   getVariableDebtToken,
-} from '@aave/deploy-v3/dist/helpers/contract-getters';
-import { getFirstSigner } from '@aave/deploy-v3/dist/helpers/utilities/signer';
+} from '@pollum-io/lending-deploy/dist/helpers/contract-getters';
+import { getFirstSigner } from '@pollum-io/lending-deploy/dist/helpers/utilities/signer';
 import {
   deployInitializableImmutableAdminUpgradeabilityProxy,
   deployMockAToken,
@@ -21,12 +21,12 @@ import {
   deployMockReentrantInitializableImple,
   deployMockStableDebtToken,
   deployMockVariableDebtToken,
-} from '@aave/deploy-v3/dist/helpers/contract-deployments';
+} from '@pollum-io/lending-deploy/dist/helpers/contract-deployments';
 import {
   InitializableImmutableAdminUpgradeabilityProxy,
   InitializableImmutableAdminUpgradeabilityProxy__factory,
 } from '../types';
-import { evmSnapshot, evmRevert, getEthersSigners } from '@aave/deploy-v3';
+import { evmSnapshot, evmRevert, getEthersSigners } from '@pollum-io/lending-deploy';
 
 makeSuite('Upgradeability', (testEnv: TestEnv) => {
   context('VersionedInitializable', async () => {

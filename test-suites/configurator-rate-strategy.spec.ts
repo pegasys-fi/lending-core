@@ -4,7 +4,7 @@ import { utils } from 'ethers';
 import { ZeroReserveInterestRateStrategy__factory } from '../types';
 import { TestEnv, makeSuite } from './helpers/make-suite';
 import './helpers/utils/wadraymath';
-import { MAX_UINT_AMOUNT, ZERO_ADDRESS, evmRevert, evmSnapshot } from '@aave/deploy-v3';
+import { MAX_UINT_AMOUNT, ZERO_ADDRESS, evmRevert, evmSnapshot } from '@pollum-io/lending-deploy';
 
 makeSuite('PoolConfigurator: Set Rate Strategy', (testEnv: TestEnv) => {
   let snap: string;

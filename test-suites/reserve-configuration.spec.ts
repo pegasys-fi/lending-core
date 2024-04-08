@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { BigNumber } from '@ethersproject/bignumber';
-import { deployMockReserveConfiguration } from '@aave/deploy-v3/dist/helpers/contract-deployments';
+import { deployMockReserveConfiguration } from '@pollum-io/lending-deploy/dist/helpers/contract-deployments';
 import { ProtocolErrors } from '../helpers/types';
-import { evmSnapshot, evmRevert } from '@aave/deploy-v3';
+import { evmSnapshot, evmRevert } from '@pollum-io/lending-deploy';
 import { MockReserveConfiguration } from '../types';
 
 describe('ReserveConfiguration', async () => {

@@ -12,11 +12,11 @@ import {
   evmSnapshot,
   evmRevert,
   advanceTimeAndBlock,
-} from '@aave/deploy-v3';
+} from '@pollum-io/lending-deploy';
 import { getReserveData, getUserData } from './helpers/utils/helpers';
 import { getTxCostAndTimestamp } from './helpers/actions';
-import AaveConfig from '@aave/deploy-v3/dist/markets/test';
-import { getACLManager } from '@aave/deploy-v3/dist/helpers/contract-getters';
+import AaveConfig from '@pollum-io/lending-deploy/dist/markets/test';
+import { getACLManager } from '@pollum-io/lending-deploy/dist/helpers/contract-getters';
 import {
   calcExpectedReserveDataAfterMintUnbacked,
   configuration as calculationsConfiguration,

@@ -7,12 +7,9 @@ export interface SymbolMap<T> {
 export type eNetwork = eEthereumNetwork;
 
 export enum eEthereumNetwork {
-  kovan = 'kovan',
-  ropsten = 'ropsten',
-  main = 'main',
+  rollux = 'rollux',
   coverage = 'coverage',
   hardhat = 'hardhat',
-  tenderlyMain = 'tenderlyMain',
 }
 
 export enum eContractid {
@@ -187,46 +184,13 @@ export interface iAssetCommon<T> {
   [key: string]: T;
 }
 export interface iAssetBase<T> {
+  WSYS: T;
   WETH: T;
   DAI: T;
-  TUSD: T;
   USDC: T;
   USDT: T;
-  SUSD: T;
-  AAVE: T;
-  BAT: T;
-  MKR: T;
-  LINK: T;
-  KNC: T;
   WBTC: T;
-  MANA: T;
-  ZRX: T;
-  SNX: T;
-  BUSD: T;
-  YFI: T;
-  UNI: T;
-  USD: T;
-  REN: T;
-  ENJ: T;
-  UniDAIWETH: T;
-  UniWBTCWETH: T;
-  UniAAVEWETH: T;
-  UniBATWETH: T;
-  UniDAIUSDC: T;
-  UniCRVWETH: T;
-  UniLINKWETH: T;
-  UniMKRWETH: T;
-  UniRENWETH: T;
-  UniSNXWETH: T;
-  UniUNIWETH: T;
-  UniUSDCWETH: T;
-  UniWBTCUSDC: T;
-  UniYFIWETH: T;
-  BptWBTCWETH: T;
-  BptBALWETH: T;
-  WMATIC: T;
-  STAKE: T;
-  xSUSHI: T;
+  // USD: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, 'ETH'>;
@@ -235,27 +199,7 @@ export type iAssetsWithoutUSD<T> = Omit<iAssetBase<T>, 'USD'>;
 
 export type iAavePoolAssets<T> = Pick<
   iAssetsWithoutUSD<T>,
-  | 'DAI'
-  | 'TUSD'
-  | 'USDC'
-  | 'USDT'
-  | 'SUSD'
-  | 'AAVE'
-  | 'BAT'
-  | 'MKR'
-  | 'LINK'
-  | 'KNC'
-  | 'WBTC'
-  | 'MANA'
-  | 'ZRX'
-  | 'SNX'
-  | 'BUSD'
-  | 'WETH'
-  | 'YFI'
-  | 'UNI'
-  | 'REN'
-  | 'ENJ'
-  | 'xSUSHI'
+  'DAI' | 'USDC' | 'USDT' | 'WBTC' | 'WETH' | 'WSYS'
 >;
 
 export type iMultiPoolsAssets<T> = iAssetCommon<T> | iAavePoolAssets<T>;
@@ -264,45 +208,11 @@ export type iAssetAggregatorBase<T> = iAssetsWithoutETH<T>;
 
 export enum TokenContractId {
   DAI = 'DAI',
-  AAVE = 'AAVE',
-  TUSD = 'TUSD',
-  BAT = 'BAT',
   WETH = 'WETH',
   USDC = 'USDC',
   USDT = 'USDT',
-  SUSD = 'SUSD',
-  ZRX = 'ZRX',
-  MKR = 'MKR',
   WBTC = 'WBTC',
-  LINK = 'LINK',
-  KNC = 'KNC',
-  MANA = 'MANA',
-  REN = 'REN',
-  SNX = 'SNX',
-  BUSD = 'BUSD',
-  USD = 'USD',
-  YFI = 'YFI',
-  UNI = 'UNI',
-  ENJ = 'ENJ',
-  UniDAIWETH = 'UniDAIWETH',
-  UniWBTCWETH = 'UniWBTCWETH',
-  UniAAVEWETH = 'UniAAVEWETH',
-  UniBATWETH = 'UniBATWETH',
-  UniDAIUSDC = 'UniDAIUSDC',
-  UniCRVWETH = 'UniCRVWETH',
-  UniLINKWETH = 'UniLINKWETH',
-  UniMKRWETH = 'UniMKRWETH',
-  UniRENWETH = 'UniRENWETH',
-  UniSNXWETH = 'UniSNXWETH',
-  UniUNIWETH = 'UniUNIWETH',
-  UniUSDCWETH = 'UniUSDCWETH',
-  UniWBTCUSDC = 'UniWBTCUSDC',
-  UniYFIWETH = 'UniYFIWETH',
-  BptWBTCWETH = 'BptWBTCWETH',
-  BptBALWETH = 'BptBALWETH',
-  WMATIC = 'WMATIC',
-  STAKE = 'STAKE',
-  xSUSHI = 'xSUSHI',
+  WSYS = 'WSYS',
 }
 
 export interface IReserveParams extends IReserveBorrowParams, IReserveCollateralParams {
@@ -347,11 +257,8 @@ export interface iParamsPerNetworkAll<T> extends iEthereumParamsPerNetwork<T> {}
 
 export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.coverage]: T;
-  [eEthereumNetwork.kovan]: T;
-  [eEthereumNetwork.ropsten]: T;
-  [eEthereumNetwork.main]: T;
+  [eEthereumNetwork.rollux]: T;
   [eEthereumNetwork.hardhat]: T;
-  [eEthereumNetwork.tenderlyMain]: T;
 }
 
 export enum RateMode {
