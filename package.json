@@ -33,11 +33,11 @@
     "prepublish": "npm run compile && npm run build"
   },
   "devDependencies": {
-    "@pollum-io/lending-deploy": "0.0.1",
-    "@pollum-io/lending-periphery": "0.0.3",
     "@ethersproject/bignumber": "^5.6.2",
     "@nomicfoundation/hardhat-chai-matchers": "1.0.5",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@pollum-io/lending-deploy": "0.0.8",
+    "@pollum-io/lending-periphery": "0.0.3",
     "@tenderly/hardhat-tenderly": "1.1.0-beta.5",
     "@types/chai": "4.2.11",
     "@types/lowdb": "1.0.9",
@@ -77,5 +77,8 @@
   },
   "lint-staged": {
     "*.{ts,js,md,sol}": "prettier --write"
+  },
+  "dependencies": {
+    "ethers": "5.7.2"
   }
 }

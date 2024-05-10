@@ -17,7 +17,7 @@ if [ ! "$COVERAGE" = true ]; then
     # remove hardhat and artifacts cache
     npm run ci:clean
 
-    # compile @aave/core-v3 contracts
+    # compile @pollum-io/lending-core contracts
     npm run compile
 else
     echo "[BASH] Skipping compilation to keep coverage artifacts"
@@ -28,11 +28,11 @@ fi
 mkdir -p temp-artifacts
 cp -r artifacts/* temp-artifacts
 
-# Import external @aave/periphery artifacts
+# Import external @pollum-io/lending-periphery artifacts
 mkdir -p temp-artifacts/periphery
 cp -r node_modules/@pollum-io/lending-periphery/artifacts/contracts/* temp-artifacts/periphery
 
-# Import external @aave/deploy artifacts
+# Import external @pollum-io/lending-deploy artifacts
 mkdir -p temp-artifacts/deploy
 cp -r node_modules/@pollum-io/lending-deploy/artifacts/contracts/* temp-artifacts/deploy
 
